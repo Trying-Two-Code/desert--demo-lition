@@ -8,6 +8,7 @@ func _physics_process(delta):
 	position.y += -SPEED * delta
 
 func _on_area_2d_body_entered(body):
+	print("hit something: ", body)
 	if body.is_in_group("enemy") and hurtEnemy:
 		body.queue_free()
 		queue_free()

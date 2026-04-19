@@ -1,23 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://dq3s066ixr2cl"]
+[gd_scene format=3 uid="uid://dq3s066ixr2cl"]
 
-[ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_wugcx"]
+[ext_resource type="Script" uid="uid://cipemhtquagb7" path="res://Scripts/bullet.gd" id="1_wugcx"]
 [ext_resource type="Texture2D" uid="uid://cbrky4py1i8pq" path="res://images/yellow bullet.png" id="2_uk54s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxglw"]
 size = Vector2(18, 109)
 
-[node name="enemy bullet" type="CharacterBody2D"]
+[node name="enemy bullet" type="CharacterBody2D" unique_id=1852577826]
 script = ExtResource("1_wugcx")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=318161306]
 z_index = 10
 scale = Vector2(2, 2)
 texture = ExtResource("2_uk54s")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D - Detector" type="Area2D" parent="." unique_id=1409629680]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D - Detector" unique_id=1145860868]
 position = Vector2(-1, -13.5)
 shape = SubResource("RectangleShape2D_mxglw")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered" flags=18]
+[connection signal="body_entered" from="Area2D - Detector" to="." method="_on_area_2d_body_entered" flags=18]

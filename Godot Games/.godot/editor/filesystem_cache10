@@ -1,0 +1,78 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1776574465
+export_presets.cfg::TextFile::-1::1776573859::0::1::::<><><>0<>0<><>::
+icon.svg::CompressedTexture2D::9194006593318414063::1776573859::1776574467::1::::<><><>0<>0<>65825e4f8167c4d2e201c94bdfdb4fd9<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+PowerupPlayer.gd::GDScript::5289466907921386981::1776573859::0::1::::<>Area2D<><>0<>0<><>::
+::res://images/::1776573858
+bomb-sheet.png::CompressedTexture2D::3882147299788212496::1776573858::1776574467::1::::<><><>0<>0<>030c2378f3df2f9efed37143989c8ae8<>res://.godot/imported/bomb-sheet.png-846821a56c5c2d625df66a168e9f892a.ctex::
+bush 1.png::CompressedTexture2D::9066801729278184778::1776573858::1776574467::1::::<><><>0<>0<>be0a245cbb91a7778027f9e3d05826e0<>res://.godot/imported/bush 1.png-d7f41d884065b7bf859932fd04b9bf9d.ctex::
+desert demo title png1.png::CompressedTexture2D::204742700627494398::1776573858::1776574467::1::::<><><>0<>0<>2d7c9b1aaeddb9a5aac5a5ff50002be1<>res://.godot/imported/desert demo title png1.png-d616303583208981d25c2e531938dd38.ctex::
+desert demo title png2.png::CompressedTexture2D::7919869213860047657::1776573858::1776574467::1::::<><><>0<>0<>f07a6ddb7cad81d42bbdf13ca7faaabf<>res://.godot/imported/desert demo title png2.png-7e07fbf4146017fa9f02df45619b13e2.ctex::
+desert demo title png3.png::CompressedTexture2D::1047285703575413696::1776573858::1776574467::1::::<><><>0<>0<>4af41b5948d7d78392d9548370243201<>res://.godot/imported/desert demo title png3.png-4f058e21c7ae01b7f2564c780034fa13.ctex::
+dust - 1.png::CompressedTexture2D::8101177403058080496::1776573858::1776574467::1::::<><><>0<>0<>b81fb3ee8a3e151ea1e6e50bc66db1d0<>res://.godot/imported/dust - 1.png-f2df24f0600dda0284816167cbc2c28f.ctex::
+environment -3.png::CompressedTexture2D::8013219411674335548::1776573858::1776574467::1::::<><><>0<>0<>89aacc83657749b32770d5a408ff9035<>res://.godot/imported/environment -3.png-488028cc1f6c62b9916f557805b6ebde.ctex::
+environment - 4.png::CompressedTexture2D::808199019131474527::1776573858::1776574467::1::::<><><>0<>0<>a9a84223a9052a95d9b8f4f5bb597c46<>res://.godot/imported/environment - 4.png-4b0dd9d35fc473067ec9e50c53ef48b3.ctex::
+environment - 5.png::CompressedTexture2D::6338152314475386614::1776573858::1776574467::1::::<><><>0<>0<>6018433a42ffaa7cdd80542f2f89ecc1<>res://.godot/imported/environment - 5.png-8c209c0fad62611572f061301fea07e3.ctex::
+explosion-sheet.png::CompressedTexture2D::9130607799172671866::1776573858::1776574467::1::::<><><>0<>0<>596d7b29710ff3932b3170941e1b4701<>res://.godot/imported/explosion-sheet.png-55ecd2705547faba98f883d9c0befeae.ctex::
+flame effect sheet.png::CompressedTexture2D::5957976579159230047::1776573858::1776574467::1::::<><><>0<>0<>afb4dc76a5b824b76a729601a738ce5e<>res://.godot/imported/flame effect sheet.png-3e4cb673a9abdd212b318048eb961c43.ctex::
+Gangster 1.png::CompressedTexture2D::6952916233311370256::1776573857::1776574467::1::::<><><>0<>0<>c9de9e42b152e1511b9178af8d438789<>res://.godot/imported/Gangster 1.png-754c6fc54ce92582f330418597818559.ctex::
+Gangster 2-export.png::CompressedTexture2D::835877973207917067::1776573857::1776574467::1::::<><><>0<>0<>d789283de566db2bd4c76e6bf3232a59<>res://.godot/imported/Gangster 2-export.png-6e586044bf0c23cc2b723f854c259b2b.ctex::
+heart-sheet.png::CompressedTexture2D::1007495439306744721::1776573858::1776574467::1::::<><><>0<>0<>87baa9ff567fc179df51b07a5b4af534<>res://.godot/imported/heart-sheet.png-681c4b410653a103c0966a255098a984.ctex::
+Motorcycle.png::CompressedTexture2D::3122445292943936135::1776573857::1776574467::1::::<><><>0<>0<>c1630440a2473575b7af68cff0b26127<>res://.godot/imported/Motorcycle.png-905067420e78d2fce8e81243b65edc97.ctex::
+pizza power.png::CompressedTexture2D::7935010507047131432::1776573858::1776574467::1::::<><><>0<>0<>391fe39ad963c46933751e4613eb3e3a<>res://.godot/imported/pizza power.png-302c83434d52d406fd0992a3c498eac7.ctex::
+pothole.png::CompressedTexture2D::548023728602114703::1776573858::1776574467::1::::<><><>0<>0<>0d8336334071aade89117ed3a4a19eca<>res://.godot/imported/pothole.png-3af0f119c3bbed184dacde3ade200d98.ctex::
+startbutton1.png::CompressedTexture2D::507691985120984874::1776573858::1776574467::1::::<><><>0<>0<>9cf6304e4ca8368f6a257e61e9c8581a<>res://.godot/imported/startbutton1.png-66bc707630ff6bc4956d0dc1e3aa4f5f.ctex::
+startbutton2.png::CompressedTexture2D::7131110084357394632::1776573858::1776574467::1::::<><><>0<>0<>c348482c41250b3e88d2db4cfb9547e4<>res://.godot/imported/startbutton2.png-9a6074ad9970ef179aa5df4b0b61923c.ctex::
+truck one-Sheet.png::CompressedTexture2D::7368693524449152619::1776573858::1776574467::1::::<><><>0<>0<>caf96d8700fd48caec87405038ff6186<>res://.godot/imported/truck one-Sheet.png-104fd68fd7b25a6724b4cc53595a5c2b.ctex::
+tumbleweed.png::CompressedTexture2D::3112886161560384065::1776573858::1776574467::1::::<><><>0<>0<>bcb3f9f0c62c196859d1d2d6f4f6ca2c<>res://.godot/imported/tumbleweed.png-b234a4c0a03811ee35403860708f33f6.ctex::
+warning - 1.png::CompressedTexture2D::7519680591697057814::1776573858::1776574467::1::::<><><>0<>0<>737ffcd17be994d17339781f1b73c0a4<>res://.godot/imported/warning - 1.png-9349d48c6f6921bb6e5e57ed8c5ef175.ctex::
+yellow bullet.png::CompressedTexture2D::4878776209299401266::1776573858::1776574467::1::::<><><>0<>0<>0b78ad188b8ff8f3e1ac90b37cfa6998<>res://.godot/imported/yellow bullet.png-c7b36d9ea5027947b9d138441dccac11.ctex::
+::res://music/::1776573858
+BeepBox-Desert demo.wav::AudioStreamWAV::8624516649599039162::1776573858::1776574467::1::::<><><>0<>0<>773fdcd7b49372d3a41f5b121a90c866<>res://.godot/imported/BeepBox-Desert demo.wav-b17785fa04f91dbbe01863e56815c51a.sample::
+BeepBox-Song (1).wav::AudioStreamWAV::618106658042287081::1776573858::1776574467::1::::<><><>0<>0<>a92c4fdafbae5eedeec76842851f33fe<>res://.godot/imported/BeepBox-Song (1).wav-ae38d0e3e4216c0671faa4b89adabfc4.sample::
+Desert Demo Main Theme.wav::AudioStreamWAV::658271961277916317::1776573858::1776574467::1::::<><><>0<>0<>3bb1b48b751c6dce1931b592966f1455<>res://.godot/imported/Desert Demo Main Theme.wav-c66564c2d5cfa0e7f4d213adc4566c20.sample::
+::res://New folder/::1776599020
+::res://Scenes/::1776573858
+bomb.tscn::PackedScene::2915196396096313576::1776573858::0::1::::<><><>0<>0<><>::res://Scripts/bomb.gd<>uid://d3c61nt0jh18i::::res://images/explosion-sheet.png<>uid://bvksntb7reg5m::::res://images/bomb-sheet.png
+bullet.tscn::PackedScene::640846246009049876::1776573858::0::1::::<><><>0<>0<><>::res://Scripts/bullet.gd<>uid://cbrky4py1i8pq::::res://images/yellow bullet.png
+destruction_particles_enemy.tscn::PackedScene::1205507150092264043::1776573858::0::1::::<><><>0<>0<><>::res://Scripts/DestroyMyself.gd
+enemy - bomber.tscn::PackedScene::8285210824263388290::1776573858::0::1::::<><><>0<>0<><>::res://Scripts/Enemy.gd<>uid://l5512bkkg47h::::res://images/Gangster 2-export.png<>res://Scripts/bomb spawner.gd<>uid://bhse4gxpnco6s::::res://Scenes/bomb.tscn
+Enemy Bullet.tscn::PackedScene::8341225353626623731::1776573858::0::1::::<><><>0<>0<><>::res://Scripts/bullet.gd<>uid://cbrky4py1i8pq::::res://images/yellow bullet.png
+enemy.tscn::PackedScene::7162350381507944584::1776573858::0::1::::<><><>0<>0<><>::res://Scripts/Enemy.gd<>uid://c6cbrq2bpcmpc::::res://images/Gangster 1.png<>res://Scripts/EnemyGun.gd<>uid://dq3s066ixr2cl::::res://Scenes/Enemy Bullet.tscn
+environment.tscn::PackedScene::3523728337436860088::1776573858::0::1::::<><><>0<>0<><>::res://sCRIPTS/environment.gd<>uid://c66v2n50b6ixb::::res://Scenes/sand_tile.tscn<>uid://d2ga5uf6xggdm::::res://images/bush 1.png
+Main Scene.tscn::PackedScene::7354057098626287430::1776573858::0::1::::<><><>0<>0<><>::res://sCRIPTS/KillPlayer.gd<>res://Scripts/Camera2D.gd<>uid://biip3aprbpgaa::::res://Scenes/player.tscn<>uid://bqg6j5jkx4dn1::::res://Scenes/environment.tscn<>uid://dnojhcylkdiqy::::res://images/dust - 1.png<>uid://dsetkfspw6pf5::::res://Scenes/pothole_obsticle.tscn<>uid://dabq4ngpj38ye::::res://Scenes/enemy.tscn<>res://Scripts/Enemy Spawner.gd<>uid://bcwpxvjco72h0::::res://Scenes/truck_obsticle.tscn<>uid://cxss48bdkp2cg::::res://Scenes/powerup.tscn<>uid://jeov5rp18373::::res://Scenes/bullet.tscn<>uid://jm4v4ls2th3b::::res://music/Desert Demo Main Theme.wav<>uid://ombkj54ql4iv::::res://images/heart-sheet.png<>res://Scripts/Hurt Panel.gd<>res://Scripts/Health Panel.gd<>res://Scripts/Score.gd<>uid://hh6u3ojyk2nu::::res://images/startbutton1.png<>uid://c6gc2hkyqyio::::res://images/desert demo title png1.png<>uid://c8umlupmdmb1a::::res://images/startbutton2.png<>res://Scripts/start button.gd<>uid://dk3pdax7v1nen::::res://images/desert demo title png2.png<>uid://o6kv305w2b1q::::res://images/desert demo title png3.png<>res://Scripts/Pause Menu.gd
+player.tscn::PackedScene::2965407235897073664::1776573858::0::1::::<><><>0<>0<><>::res://Scripts/player.gd<>uid://bkqshn0vapyvf::::res://images/Motorcycle.png<>uid://cio484hdconk8::::res://sfx/engine-47745.mp3<>res://Scripts/Gun.gd<>uid://jeov5rp18373::::res://Scenes/bullet.tscn<>res://Scripts/HurtEnemy.gd<>uid://rf7r514usux4::::res://Scenes/destruction_particles_enemy.tscn<>uid://cq5daem4l1mxb::::res://images/flame effect sheet.png
+pothole.tscn::PackedScene::551263756868447627::1776573858::0::1::::<><><>0<>0<><>::res://Scripts/Obsticle.gd<>uid://h2p4utw7xb7t::::res://images/pothole.png<>res://Scripts/HarmPlayer.gd<>uid://rf7r514usux4::::res://Scenes/destruction_particles_enemy.tscn
+pothole_obsticle.tscn::PackedScene::8432090519517133884::1776573858::0::1::::<><><>0<>0<><>::uid://h4bh674g4fap::::res://Scenes/pothole.tscn<>res://Scripts/Warning.gd<>uid://dfeubnb6d67rm::::res://images/warning - 1.png<>uid://cvloodp7bn6n7::::res://sfx/warning.wav
+powerup.tscn::PackedScene::6425489999492710894::1776573858::0::1::::<><><>0<>0<><>::res://Scripts/Obsticle.gd<>uid://dlb1p1crelp25::::res://images/pizza power.png<>res://PowerupPlayer.gd<>uid://rf7r514usux4::::res://Scenes/destruction_particles_enemy.tscn
+Red Truck 1.tscn::PackedScene::3056231992315333220::1776573858::0::1::::<><><>0<>0<><>::res://Scripts/ObsticleRedTruck.gd<>uid://dc8pknp55mun8::::res://images/truck one-Sheet.png<>res://Scripts/HarmPlayer.gd<>uid://rf7r514usux4::::res://Scenes/destruction_particles_enemy.tscn
+sand_tile.tscn::PackedScene::7014015234110721751::1776573858::0::1::::<><><>0<>0<><>::uid://lrq6jiqcojfb::::res://images/environment - 4.png<>uid://cwkipbwdl3nj7::::res://images/environment - 5.png
+truck_obsticle.tscn::PackedScene::2573167626714251987::1776573858::0::1::::<><><>0<>0<><>::uid://dsetkfspw6pf5::::res://Scenes/pothole_obsticle.tscn<>uid://bjspxuynq5v5e::::res://Scenes/Red Truck 1.tscn
+::res://Scripts/::1776573859
+bomb spawner.gd::GDScript::2258943018223546245::1776573859::0::1::::<>Node2D<><>0<>0<><>::
+bomb.gd::GDScript::6654052369042568912::1776573859::0::1::::<>CharacterBody2D<><>0<>0<><>::
+bullet.gd::GDScript::5365582478067717850::1776573859::0::1::::<>CharacterBody2D<><>0<>0<><>::
+Camera2D.gd::GDScript::8961014911508267554::1776573858::0::1::::<>Camera2D<><>0<>0<><>::
+DestroyMyself.gd::GDScript::3219045148698238792::1776573858::0::1::::<>Node2D<><>0<>0<><>::
+Enemy Spawner.gd::GDScript::6495639288112991978::1776573858::0::1::::<>Node2D<><>0<>0<><>::
+Enemy.gd::GDScript::3397139936774465275::1776573858::0::1::::<>CharacterBody2D<><>0<>0<><>::
+EnemyGun.gd::GDScript::1591557378561476782::1776573858::0::1::::<>Node2D<><>0<>0<><>::
+environment.gd::GDScript::3730895115348319036::1776573859::0::1::::<>Node2D<><>0<>0<><>::
+GLOBAL.gd::GDScript::7084748063189163361::1776573858::0::1::::<>Node2D<><>0<>0<><>::
+Gun.gd::GDScript::4486292092467333030::1776573858::0::1::::<>Node2D<><>0<>0<><>::
+HarmPlayer.gd::GDScript::7464709732280556536::1776573858::0::1::::<>Area2D<><>0<>0<><>::
+Health Panel.gd::GDScript::4197543649160908199::1776573858::0::1::::<>Panel<><>0<>0<><>::
+Hurt Panel.gd::GDScript::3387470341491891481::1776573858::0::1::::<>Panel<><>0<>0<><>::
+HurtEnemy.gd::GDScript::3108544612471142971::1776573859::0::1::::<>Area2D<><>0<>0<><>::
+KillPlayer.gd::GDScript::4073136353853694588::1776573859::0::1::::<>StaticBody2D<><>0<>0<><>::
+Obsticle.gd::GDScript::242986043761055743::1776573859::0::1::::<>CharacterBody2D<><>0<>0<><>::
+ObsticleRedTruck.gd::GDScript::1615764063246757411::1776573859::0::1::::<>CharacterBody2D<><>0<>0<><>::
+Pause Menu.gd::GDScript::43338804999698043::1776573859::0::1::::<>Control<><>0<>0<><>::
+player.gd::GDScript::7576789020246323958::1776573859::0::1::::<>CharacterBody2D<><>0<>0<><>::
+Score.gd::GDScript::3593807956789620616::1776573859::0::1::::<>RichTextLabel<><>0<>0<><>::
+SpawnObsticles.gd::GDScript::1822144774995635275::1776573859::0::1::::<>Node2D<><>0<>0<><>::
+start button.gd::GDScript::5273794264750203532::1776573859::0::1::::<>Button<><>0<>0<><>::
+Warning.gd::GDScript::3381756107286986817::1776573859::0::1::::<>Node2D<><>0<>0<><>::
+::res://sfx/::1776573859
+engine-47745.mp3::AudioStreamMP3::5365074663166716761::1776573859::1776574467::1::::<><><>0<>0<>340e70b48f3bf5350457a81fae116e89<>res://.godot/imported/engine-47745.mp3-5eb4fcad683a295f9539738d41d4092a.mp3str::
+warning.wav::AudioStreamWAV::6270390460290872590::1776573859::1776574467::1::::<><><>0<>0<>5fcc64f44e3ae20611ba40def0d7953c<>res://.godot/imported/warning.wav-7ef7685d745cc4735c9566ee69dfd826.sample::

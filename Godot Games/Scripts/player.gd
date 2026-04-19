@@ -125,6 +125,16 @@ func Hurt(spins = 1):
 		$PlayerPlayer.play("Hurt")
 		await get_tree().create_timer(0.5).timeout
 var isPowered = false
+
+func Stop_Super_Powered(_oldSpeed):
+	hurtEnemy.set_process(false)
+	speedMultiplier = _oldSpeed
+	hurtEnemy.visible = false
+	isPowered = false
+	$Gun.shootRate *= 3
+	$Area2D.monitoring = false
+	$CollisionShape2D.disabled = false
+
 func Super_Powered(amm = 1, time = 1):
 	isPowered = true
 	$Gun.shootRate /= 3
@@ -136,19 +146,7 @@ func Super_Powered(amm = 1, time = 1):
 	speedMultiplier = _oldSpeed + amm
 	hurtEnemy.set_process(true)
 	await get_tree().create_timer(time).timeout
-	hurtEnemy.set_process(false)
-	speedMultiplier = _oldSpeed
-	hurtEnemy.visible = false
-	isPowered = false
-	$Gun.shootRate *= 3
-	$Area2D.monitoring = false
-	$CollisionShape2D.disabled = false
+	Stop_Super_Powered(_oldSpeed)
 	
 func cameraShake(trauma):
 	camera.add_trauma(trauma)
-
-
-
-
-
-
