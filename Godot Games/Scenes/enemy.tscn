@@ -1,0 +1,107 @@
+[gd_scene load_steps=12 format=3 uid="uid://dabq4ngpj38ye"]
+
+[ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_w0swg"]
+[ext_resource type="Texture2D" uid="uid://c6cbrq2bpcmpc" path="res://images/Gangster 1.png" id="2_dwmt0"]
+[ext_resource type="Script" path="res://Scripts/EnemyGun.gd" id="3_tjbqt"]
+[ext_resource type="PackedScene" uid="uid://dq3s066ixr2cl" path="res://Scenes/Enemy Bullet.tscn" id="4_gmren"]
+
+[sub_resource type="Animation" id="Animation_eho6v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_kysfa"]
+resource_name = "left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_vtlrh"]
+resource_name = "right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5i02c"]
+_data = {
+"RESET": SubResource("Animation_eho6v"),
+"left": SubResource("Animation_kysfa"),
+"right": SubResource("Animation_vtlrh")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvi31"]
+size = Vector2(12, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p56ln"]
+size = Vector2(20, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i5e83"]
+size = Vector2(7.56757, 157.837)
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
+scale = Vector2(3.7, 3.7)
+motion_mode = 1
+script = ExtResource("1_w0swg")
+action = 1
+Type = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+texture = ExtResource("2_dwmt0")
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5i02c")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_cvi31")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_p56ln")
+
+[node name="Gun" type="Node2D" parent="."]
+script = ExtResource("3_tjbqt")
+bullet = ExtResource("4_gmren")
+shootRate = 1
+
+[node name="Area2D" type="Area2D" parent="Gun"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Gun/Area2D"]
+position = Vector2(0, -97.8377)
+shape = SubResource("RectangleShape2D_i5e83")
+
+[connection signal="body_entered" from="Gun/Area2D" to="Gun" method="_on_area_2d_body_entered"]

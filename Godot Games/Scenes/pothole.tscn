@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://h4bh674g4fap"]
+
+[ext_resource type="Script" path="res://Scripts/Obsticle.gd" id="1_qmm4j"]
+[ext_resource type="Texture2D" uid="uid://h2p4utw7xb7t" path="res://images/pothole.png" id="2_ov76f"]
+[ext_resource type="Script" path="res://Scripts/HarmPlayer.gd" id="3_8h2nf"]
+[ext_resource type="PackedScene" uid="uid://rf7r514usux4" path="res://Scenes/destruction_particles_enemy.tscn" id="4_khatq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7qx35"]
+radius = 145.169
+
+[node name="RigidBody2D" type="CharacterBody2D" groups=["obsticle"]]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_qmm4j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 20
+scale = Vector2(10, 10)
+texture = ExtResource("2_ov76f")
+
+[node name="HarmPlayer" type="Area2D" parent="."]
+script = ExtResource("3_8h2nf")
+enemyParticles = ExtResource("4_khatq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HarmPlayer"]
+position = Vector2(-66, -22)
+shape = SubResource("CircleShape2D_7qx35")
+
+[connection signal="body_entered" from="HarmPlayer" to="HarmPlayer" method="_on_body_entered"]
+[connection signal="body_exited" from="HarmPlayer" to="HarmPlayer" method="_on_body_exited"]

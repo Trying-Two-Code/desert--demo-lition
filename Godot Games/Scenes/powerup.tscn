@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxss48bdkp2cg"]
+
+[ext_resource type="Script" path="res://Scripts/Obsticle.gd" id="1_3qfd7"]
+[ext_resource type="Texture2D" uid="uid://dlb1p1crelp25" path="res://images/pizza power.png" id="2_11mkr"]
+[ext_resource type="Script" path="res://PowerupPlayer.gd" id="3_7dbkr"]
+[ext_resource type="PackedScene" uid="uid://rf7r514usux4" path="res://Scenes/destruction_particles_enemy.tscn" id="4_33504"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7qx35"]
+radius = 145.169
+
+[node name="Powerup" type="CharacterBody2D" groups=["obsticle"]]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_3qfd7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 20
+scale = Vector2(10, 10)
+texture = ExtResource("2_11mkr")
+
+[node name="PowerupPlayer" type="Area2D" parent="."]
+script = ExtResource("3_7dbkr")
+playerParticles = ExtResource("4_33504")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PowerupPlayer"]
+position = Vector2(-4, -4)
+shape = SubResource("CircleShape2D_7qx35")
+
+[connection signal="body_entered" from="PowerupPlayer" to="PowerupPlayer" method="_on_body_entered" flags=18]
+[connection signal="body_exited" from="PowerupPlayer" to="PowerupPlayer" method="_on_body_exited" flags=18]

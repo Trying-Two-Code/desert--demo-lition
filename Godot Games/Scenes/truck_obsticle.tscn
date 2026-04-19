@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcwpxvjco72h0"]
+
+[ext_resource type="PackedScene" uid="uid://dsetkfspw6pf5" path="res://Scenes/pothole_obsticle.tscn" id="1_bqwfk"]
+[ext_resource type="PackedScene" uid="uid://bjspxuynq5v5e" path="res://Scenes/Red Truck 1.tscn" id="2_hubti"]
+
+[sub_resource type="Gradient" id="Gradient_trvte"]
+colors = PackedColorArray(0.886275, 0, 0.282353, 0.466667, 0.827451, 0, 0.298039, 0.580392)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dj36o"]
+gradient = SubResource("Gradient_trvte")
+
+[node name="Truck Obsticle" instance=ExtResource("1_bqwfk")]
+scale = Vector2(1, 1)
+
+[node name="RigidBody2D2" parent="." index="0" instance=ExtResource("2_hubti")]
+
+[node name="RigidBody2D" parent="." index="1"]
+visible = false
+script = null
+
+[node name="Warning" parent="." index="2"]
+yOffset = 10.0
+
+[node name="AnimationPlayer" parent="Warning/Sprite2D" index="0"]
+speed_scale = 1.5
+
+[node name="Sprite2D" type="Sprite2D" parent="Warning/Sprite2D" index="1"]
+show_behind_parent = true
+position = Vector2(0, 57.8563)
+scale = Vector2(0.0635417, 219.979)
+texture = SubResource("GradientTexture1D_dj36o")

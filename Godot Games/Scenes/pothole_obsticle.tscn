@@ -1,0 +1,118 @@
+[gd_scene load_steps=8 format=3 uid="uid://dsetkfspw6pf5"]
+
+[ext_resource type="PackedScene" uid="uid://h4bh674g4fap" path="res://Scenes/pothole.tscn" id="1_u0tt1"]
+[ext_resource type="Script" path="res://Scripts/Warning.gd" id="2_5x6xd"]
+[ext_resource type="Texture2D" uid="uid://dfeubnb6d67rm" path="res://images/warning - 1.png" id="3_5gxpe"]
+[ext_resource type="AudioStream" uid="uid://cvloodp7bn6n7" path="res://sfx/warning.wav" id="4_syf7h"]
+
+[sub_resource type="Animation" id="Animation_ekaiy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../warning sfx:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_vowlk"]
+resource_name = "Warning Beep"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(0.5, 0.5), Vector2(0.6, 0.6), Vector2(0.7, 0.7)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../warning sfx:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vbb10"]
+_data = {
+"RESET": SubResource("Animation_ekaiy"),
+"Warning Beep": SubResource("Animation_vowlk")
+}
+
+[node name="Pothole Obsticle" type="Node2D"]
+scale = Vector2(0.9, 0.9)
+
+[node name="RigidBody2D" parent="." instance=ExtResource("1_u0tt1")]
+
+[node name="Warning" type="Node2D" parent="."]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("2_5x6xd")
+yOffset = 50.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Warning"]
+visible = false
+z_index = 21
+scale = Vector2(15, 15)
+texture = ExtResource("3_5gxpe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Warning/Sprite2D"]
+autoplay = "Warning Beep"
+libraries = {
+"": SubResource("AnimationLibrary_vbb10")
+}
+
+[node name="warning sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_syf7h")
+volume_db = 24.0
+autoplay = true

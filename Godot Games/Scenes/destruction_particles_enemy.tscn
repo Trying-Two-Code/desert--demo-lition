@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://rf7r514usux4"]
+
+[ext_resource type="Script" path="res://Scripts/DestroyMyself.gd" id="1_x5q2l"]
+
+[sub_resource type="Curve" id="Curve_hgpi6"]
+min_value = -1.0
+_data = [Vector2(0, -0.363636), 0.0, 0.0, 0, 0, Vector2(1, 0.145455), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Destruction Particles - Enemy" type="CPUParticles2D"]
+z_index = 20
+scale = Vector2(10, 10)
+amount = 50
+lifetime = 4.0
+speed_scale = 2.0
+explosiveness = 0.9
+emission_shape = 1
+emission_sphere_radius = 2.0
+direction = Vector2(0, 1)
+spread = 112.5
+gravity = Vector2(0, 10)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+scale_amount_min = 5.0
+scale_amount_max = 20.0
+color = Color(1, 0.901961, 0.529412, 1)
+hue_variation_min = -0.1
+hue_variation_max = 0.1
+hue_variation_curve = SubResource("Curve_hgpi6")
+anim_speed_min = 0.1
+anim_speed_max = 1.0
+
+[node name="DestroyMyself" type="Node2D" parent="."]
+script = ExtResource("1_x5q2l")
+In = 1.5

@@ -1,0 +1,389 @@
+[gd_scene load_steps=38 format=3 uid="uid://dc1mimly3ajis"]
+
+[ext_resource type="Script" path="res://sCRIPTS/KillPlayer.gd" id="1_akdwo"]
+[ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="1_nkxjj"]
+[ext_resource type="PackedScene" uid="uid://biip3aprbpgaa" path="res://Scenes/player.tscn" id="1_r0fvw"]
+[ext_resource type="PackedScene" uid="uid://bqg6j5jkx4dn1" path="res://Scenes/environment.tscn" id="2_utqrx"]
+[ext_resource type="Texture2D" uid="uid://dnojhcylkdiqy" path="res://images/dust - 1.png" id="3_3ktam"]
+[ext_resource type="PackedScene" uid="uid://dsetkfspw6pf5" path="res://Scenes/pothole_obsticle.tscn" id="5_gxas6"]
+[ext_resource type="PackedScene" uid="uid://dabq4ngpj38ye" path="res://Scenes/enemy.tscn" id="5_uq7gl"]
+[ext_resource type="Script" path="res://Scripts/Enemy Spawner.gd" id="6_r2rd2"]
+[ext_resource type="PackedScene" uid="uid://bcwpxvjco72h0" path="res://Scenes/truck_obsticle.tscn" id="7_i17n5"]
+[ext_resource type="PackedScene" uid="uid://cxss48bdkp2cg" path="res://Scenes/powerup.tscn" id="9_7ve6x"]
+[ext_resource type="PackedScene" uid="uid://jeov5rp18373" path="res://Scenes/bullet.tscn" id="10_5y70l"]
+[ext_resource type="AudioStream" uid="uid://jm4v4ls2th3b" path="res://music/Desert Demo Main Theme.wav" id="11_0oh3n"]
+[ext_resource type="Texture2D" uid="uid://ombkj54ql4iv" path="res://images/heart-sheet.png" id="13_hflxm"]
+[ext_resource type="Script" path="res://Scripts/Hurt Panel.gd" id="13_lssgq"]
+[ext_resource type="Script" path="res://Scripts/Health Panel.gd" id="14_mo7jg"]
+[ext_resource type="Script" path="res://Scripts/Score.gd" id="16_lgn2y"]
+[ext_resource type="Texture2D" uid="uid://hh6u3ojyk2nu" path="res://images/startbutton1.png" id="17_qup5k"]
+[ext_resource type="Texture2D" uid="uid://c6gc2hkyqyio" path="res://images/desert demo title png1.png" id="18_spkym"]
+[ext_resource type="Texture2D" uid="uid://c8umlupmdmb1a" path="res://images/startbutton2.png" id="18_t47bj"]
+[ext_resource type="Script" path="res://Scripts/start button.gd" id="19_3i88p"]
+[ext_resource type="Texture2D" uid="uid://dk3pdax7v1nen" path="res://images/desert demo title png2.png" id="19_uby86"]
+[ext_resource type="Texture2D" uid="uid://o6kv305w2b1q" path="res://images/desert demo title png3.png" id="20_d52ie"]
+[ext_resource type="Script" path="res://Scripts/Pause Menu.gd" id="23_aif34"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e38gk"]
+size = Vector2(567.25, 1089.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifdfx"]
+size = Vector2(2247, 384)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ctfcb"]
+size = Vector2(600, 1145)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fymta"]
+size = Vector2(2751, 1858)
+
+[sub_resource type="GDScript" id="GDScript_4rxjs"]
+script/source = "extends Node2D
+
+@export var obsticles: Array[PackedScene]
+
+const TIMETOSPAWN = 2
+
+func _ready():
+	randomize()
+
+func SpawnObsticle(objList=[], xRange=[-300, 300], y=-1080):
+	if objList.size() == 0:
+		return false
+	var random_index = randi() % objList.size()
+	var objChoice = objList[random_index]
+	var newObsticle = objChoice.instantiate()
+	add_child(newObsticle)
+	newObsticle.position.y = y
+	var random_integer = randi() % (xRange[1] - xRange[0] + 1) + xRange[0]
+	newObsticle.position.x = random_integer
+	print(newObsticle)
+
+var t = 5
+func _process(delta):
+	t -= delta
+	if(t <= 0):
+		print(\"Spawn\")
+		t = TIMETOSPAWN
+		SpawnObsticle(obsticles)
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y1we0"]
+bg_color = Color(0.909804, 0.227451, 0.258824, 0.219608)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r7b0d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7bu2u"]
+bg_color = Color(0.6, 0.6, 0.6, 0.243137)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mulkd"]
+texture = ExtResource("17_qup5k")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yql3n"]
+texture = ExtResource("17_qup5k")
+modulate_color = Color(0.572549, 0.572549, 0.572549, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cua5t"]
+texture = ExtResource("18_t47bj")
+
+[sub_resource type="Animation" id="Animation_0qx58"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Start Game/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("18_spkym")]
+}
+
+[sub_resource type="Animation" id="Animation_qmq2e"]
+resource_name = "title anim fire"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Start Game/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("18_spkym"), ExtResource("19_uby86"), ExtResource("20_d52ie")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l2btv"]
+_data = {
+"RESET": SubResource("Animation_0qx58"),
+"title anim fire": SubResource("Animation_qmq2e")
+}
+
+[node name="World" type="Node2D"]
+process_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.1, 1.1)
+script = ExtResource("1_nkxjj")
+
+[node name="Environment & Player" type="Node" parent="."]
+
+[node name="full border" type="Node2D" parent="Environment & Player"]
+process_mode = 1
+
+[node name="borderarea" type="Area2D" parent="Environment & Player/full border" groups=["border"]]
+position = Vector2(36, 0)
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment & Player/full border/borderarea"]
+position = Vector2(642, 0.25)
+shape = SubResource("RectangleShape2D_e38gk")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Environment & Player/full border/borderarea"]
+position = Vector2(-700.625, 8)
+shape = SubResource("RectangleShape2D_e38gk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment & Player/full border"]
+collision_layer = 129
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment & Player/full border/StaticBody2D"]
+position = Vector2(0.5, -775)
+shape = SubResource("RectangleShape2D_ifdfx")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Environment & Player/full border/StaticBody2D"]
+position = Vector2(726, 6.5)
+shape = SubResource("RectangleShape2D_ctfcb")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Environment & Player/full border/StaticBody2D"]
+position = Vector2(-719, -5)
+shape = SubResource("RectangleShape2D_ctfcb")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Environment & Player/full border"]
+script = ExtResource("1_akdwo")
+
+[node name="Area2D" type="Area2D" parent="Environment & Player/full border/StaticBody2D2"]
+collision_layer = 129
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment & Player/full border/StaticBody2D2/Area2D"]
+position = Vector2(-22.5, 1741)
+shape = SubResource("RectangleShape2D_fymta")
+
+[node name="environment" parent="Environment & Player" instance=ExtResource("2_utqrx")]
+process_mode = 1
+
+[node name="Player" parent="Environment & Player" groups=["Player"] instance=ExtResource("1_r0fvw")]
+position = Vector2(2, -151)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Environment & Player"]
+position = Vector2(0, -766)
+amount = 100
+texture = ExtResource("3_3ktam")
+emission_shape = 3
+emission_rect_extents = Vector2(1080, 1)
+direction = Vector2(1, 90)
+gravity = Vector2(0, 500)
+initial_velocity_max = 2000.0
+scale_amount_min = 0.1
+scale_amount_max = 2.0
+color = Color(1, 1, 1, 0.203922)
+
+[node name="Enemy Spawner" type="Node2D" parent="Environment & Player"]
+process_mode = 1
+script = ExtResource("6_r2rd2")
+
+[node name="Top Left" type="Node2D" parent="Environment & Player/Enemy Spawner" groups=["Spawn Points"]]
+position = Vector2(-207, -556)
+
+[node name="Top Right" type="Node2D" parent="Environment & Player/Enemy Spawner" groups=["Spawn Points"]]
+position = Vector2(173, -556)
+
+[node name="Bottom Left" type="Node2D" parent="Environment & Player/Enemy Spawner" groups=["Spawn Points"]]
+position = Vector2(-185, 527)
+
+[node name="Bottom Right" type="Node2D" parent="Environment & Player/Enemy Spawner" groups=["Spawn Points"]]
+position = Vector2(186, 532)
+
+[node name="Enemy" parent="Environment & Player" instance=ExtResource("5_uq7gl")]
+position = Vector2(-233, 469)
+action = 0
+
+[node name="SpawnObsticles" type="Node2D" parent="."]
+process_mode = 1
+script = SubResource("GDScript_4rxjs")
+obsticles = Array[PackedScene]([ExtResource("5_gxas6"), ExtResource("7_i17n5"), ExtResource("9_7ve6x")])
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_0oh3n")
+volume_db = 15.0
+autoplay = true
+
+[node name="bullet" parent="." instance=ExtResource("10_5y70l")]
+position = Vector2(-302, 502)
+
+[node name="UI canvas" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -979.0
+offset_top = -545.0
+offset_right = 947.0
+offset_bottom = 534.0
+
+[node name="Hurt Panel" type="Panel" parent="UI canvas"]
+modulate = Color(0.854902, 0, 0, 1)
+z_index = 1000
+layout_mode = 0
+offset_left = -7.0
+offset_top = -4.0
+offset_right = 1951.0
+offset_bottom = 1092.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_y1we0")
+script = ExtResource("13_lssgq")
+
+[node name="Health Panel" type="Panel" parent="UI canvas"]
+z_index = 4
+layout_mode = 0
+offset_left = 170.0
+offset_top = 127.0
+offset_right = 779.0
+offset_bottom = 239.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_r7b0d")
+script = ExtResource("14_mo7jg")
+health = Array[Node]([null])
+
+[node name="Health 1" type="Sprite2D" parent="UI canvas/Health Panel"]
+position = Vector2(60, 56)
+scale = Vector2(3.4375, 3.4375)
+texture = ExtResource("13_hflxm")
+hframes = 2
+
+[node name="Health 2" type="Sprite2D" parent="UI canvas/Health Panel"]
+position = Vector2(180, 56)
+scale = Vector2(3.4375, 3.4375)
+texture = ExtResource("13_hflxm")
+hframes = 2
+
+[node name="Health 3" type="Sprite2D" parent="UI canvas/Health Panel"]
+position = Vector2(300, 56)
+scale = Vector2(3.4375, 3.4375)
+texture = ExtResource("13_hflxm")
+hframes = 2
+
+[node name="Health 4" type="Sprite2D" parent="UI canvas/Health Panel"]
+position = Vector2(420, 56)
+scale = Vector2(3.4375, 3.4375)
+texture = ExtResource("13_hflxm")
+hframes = 2
+
+[node name="Health 5" type="Sprite2D" parent="UI canvas/Health Panel"]
+position = Vector2(537, 56)
+scale = Vector2(3.4375, 3.4375)
+texture = ExtResource("13_hflxm")
+hframes = 2
+
+[node name="Score" type="RichTextLabel" parent="UI canvas"]
+z_index = 10
+layout_mode = 1
+anchors_preset = -1
+offset_left = 101.0
+offset_top = 111.0
+offset_right = 1790.0
+offset_bottom = 278.0
+theme_override_font_sizes/normal_font_size = 100
+text = "0
+"
+text_direction = 2
+script = ExtResource("16_lgn2y")
+
+[node name="Start Game" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Grey Overlay" type="Panel" parent="Start Game"]
+z_index = 199
+layout_mode = 0
+offset_left = -1005.0
+offset_top = -557.0
+offset_right = 992.0
+offset_bottom = 557.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7bu2u")
+metadata/_edit_use_anchors_ = true
+
+[node name="start button" type="Button" parent="Start Game"]
+z_index = 200
+layout_mode = 0
+offset_left = -133.0
+offset_top = 33.0
+offset_right = 133.0
+offset_bottom = 262.0
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxTexture_mulkd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_yql3n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cua5t")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("19_3i88p")
+metadata/_edit_use_anchors_ = true
+
+[node name="Options" type="Button" parent="Start Game"]
+visible = false
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Start Game"]
+z_index = 100
+position = Vector2(0, -236)
+scale = Vector2(15, 15)
+texture = ExtResource("18_spkym")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Start Game/Sprite2D"]
+root_node = NodePath("../../..")
+autoplay = "title anim fire"
+speed_scale = 2.0
+libraries = {
+"": SubResource("AnimationLibrary_l2btv")
+}
+
+[node name="Pause Menu" type="Control" parent="."]
+process_mode = 3
+visible = false
+z_index = 200
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("23_aif34")
+
+[node name="Grey Overlay" type="Panel" parent="Pause Menu"]
+z_index = 199
+layout_mode = 0
+offset_left = -1005.0
+offset_top = -557.0
+offset_right = 992.0
+offset_bottom = 557.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7bu2u")
+
+[node name="Button" type="Button" parent="Pause Menu"]
+layout_mode = 0
+offset_left = -120.0
+offset_top = 66.0
+offset_right = 119.0
+offset_bottom = 211.0
+theme_override_font_sizes/font_size = 100
+text = "Back"
+
+[connection signal="area_shape_entered" from="Environment & Player/full border/borderarea" to="Environment & Player/Player" method="_on_borderarea_area_shape_entered"]
+[connection signal="area_shape_exited" from="Environment & Player/full border/borderarea" to="Environment & Player/Player" method="_on_borderarea_area_shape_exited"]
+[connection signal="body_entered" from="Environment & Player/full border/borderarea" to="Environment & Player/Player" method="_on_borderarea_body_entered"]
+[connection signal="body_exited" from="Environment & Player/full border/borderarea" to="Environment & Player/Player" method="_on_borderarea_body_exited"]
+[connection signal="body_entered" from="Environment & Player/full border/StaticBody2D2/Area2D" to="Environment & Player/full border/StaticBody2D2" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Environment & Player/full border/StaticBody2D2/Area2D" to="Environment & Player/full border/StaticBody2D2" method="_on_area_2d_body_exited"]
+[connection signal="pressed" from="Pause Menu/Button" to="Pause Menu" method="_on_button_pressed"]
